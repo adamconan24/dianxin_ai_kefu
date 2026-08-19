@@ -1,0 +1,55 @@
+<!-- <html>
+    <head><title>小学英语辅导智能体</title>
+    </head>
+
+    <body>
+        <script src="../static/myscript.js"></script>
+
+        <span>Welcome</span> 
+        <span>{{username}}</span>
+        <a href="/logout">点击退出</a>
+        <div style="width: 200px; height:50px;border: 1px black solid;">
+            <form action="/" method="post">
+                <div>
+                    <textarea id="question" style="width: 200px; height:50px;" type="text" name="question"></textarea>
+                    <input id="hidden" name="hidden" type="hidden"/>
+                    <input type="submit" value="提交" onclick="sethistory()">
+                </div>
+            </form>
+        </div>
+
+        <div id="all" style="width: 200px; border: 1px black solid; margin-top: 50px;">
+              <p class="answer" style="text-align: left;">{{answer}}</p>
+        </div>
+
+        <div style="width: 900px;" id="history">
+            {% for i in all_text %}
+                <p>{{i[0]}} ： {{i[1]}}</p>
+            {% endfor %}
+        </div>
+    </body>
+
+</html> -->
+
+
+<html>
+    <head>AI的流式回答</head>
+
+    <body>
+        <!-- 构建当前的表单 -->
+        <div>
+        <form action="/ask" method="post" target="resultFrame">
+            <div>
+                <textarea id="question" style="width: 95%; height:80px;" type="text" name="question"></textarea>
+                <input type="submit" value="提交">
+            </div>
+        </form>
+        </div>
+
+        <!-- 编写一个嵌套的子页面 -->
+        <div>
+            <iframe id="resultFrame" name="resultFrame" src="/empty" style="width: 95%; height: 400px;"></iframe>
+        </div>
+
+    </body>
+</html>
